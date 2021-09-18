@@ -1,0 +1,32 @@
+li a {
+  list-style-type: none;
+  text-decoration: none;
+  color: white;
+}
+ul li a {
+  text-decoration: none;
+  list-style-type: none;
+  padding: 10px 20px;
+}
+ul {
+  list-style-type: none;
+}
+.sign {
+  li {
+    margin-bottom: -15px;
+    a {
+      padding-top: 10px;
+      color: white;
+    }
+  }
+}
+.btn-job {
+  margin-bottom: 10px;
+}
+.collapse ul li {
+  font-weight: bold;
+}
+.logo img {
+  width: 200px;
+  height: 90px;
+}
