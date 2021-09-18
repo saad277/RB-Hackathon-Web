@@ -33,6 +33,10 @@ const Header = () => {
     let path = `/finddoctor`;
     history.push(path);
   };
+  const appointment = () => {
+    let path = `/appointment`;
+    history.push(path);
+  };
   return (
     <div
       class="header-wrapper  d-lg-block bg-primary1 text-white "
@@ -106,6 +110,12 @@ const Header = () => {
                     onClick={finddoctor}
                   >
                     <a href="">Find A Doctor</a>
+                  </li>
+                  <li
+                    className="py-2 py-md-0 text-center "
+                    onClick={appointment}
+                  >
+                    <a href="">Make Appointment</a>
                   </li>
                 </ul>
               </div>
