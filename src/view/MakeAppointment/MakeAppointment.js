@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const MakeAppointment = () => {
   const [patientName, setPatientName] = useState("");
   const [date, setDate] = useState("");
   const [therapyType, setTherapyType] = useState("");
   const [remarks, setRemarks] = useState("");
+  console.log(patientName, date, therapyType, remarks);
   return (
     <div className="bg-secondary1 py-5 ">
       <div className="container">
