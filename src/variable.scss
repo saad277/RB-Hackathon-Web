@@ -1,0 +1,110 @@
+// Color variables
+// Primary Colors
+$primary: #0b3173 !default;
+$blue: #2597f3 !default;
+$blue-dark: #054bb4 !default;
+$blue-light: #0099ff !default;
+$gray: #18204d !default;
+$dark: #0b357e !default;
+$white: #ffffff !default;
+
+// Secondary Colors
+$secondary: #eb9217 !default;
+$green: #ee8e20 !default;
+$pink: #00aa95 !default;
+$red: #dc3545 !default;
+$pink-light: #c917eb;
+$purple: #5b74ff;
+$green-light: #55d172;
+$sky: #00a8ff;
+$pink-dark: #ff5050;
+$purple-dark: #7d3cc0;
+
+// Text Colors
+$base-text-gray: #717d8e !default;
+
+// Social Colors
+$facebook: #3b5998 !default;
+$twitter: #1da1f2 !default;
+$google: #db4437 !default;
+$linkedin: #007bb5 !default;
+$instagram: #f58529 !default;
+$youtube: #ff0000 !default;
+
+// Base Gray Colors
+$gray-000: #00c0cd !default;
+$gray-100: #f0f3fa !default;
+$gray-200: #f0f4ff !default;
+$gray-300: #d9dde6 !default;
+$gray-400: #bec6d9 !default;
+$gray-500: #a8afbf !default;
+$gray-600: #8990a2 !default;
+$gray-700: #2b3245 !default;
+$gray-800: #000729 !default;
+$gray-900: #3f556d !default;
+
+// Font Sizes
+$font-size-xxs: 12px !default;
+$font-size-xs: 14px !default;
+$font-size-base: 16px !default;
+$font-size-sm: 18px !default;
+$font-size-md: 20px !default;
+$font-size-lg: 22px !default;
+$font-size-xl: 24px !default;
+$font-size-xxl: 26px !default;
+$font-size-xxxl: 30px !default;
+
+// Heading Sizes
+$h1-font-size: 60px !default;
+$h2-font-size: 44px !default;
+$h3-font-size: 38px !default;
+$h4-font-size: 22px !default;
+$h5-font-size: 20px !default;
+$h6-font-size: 18px !default;
+
+// Responsive Heading Sizes
+$res-h1-font-size: 32px !default;
+$res-h2-font-size: 26px !default;
+$res-h3-font-size: 20px !default;
+$res-h4-font-size: 18px !default;
+$res-h5-font-size: 16px !default;
+$res-h6-font-size: 14px !default;
+
+// Icon Sizes
+$icon-size-base: 32px !default;
+$icon-size-xs: 44px !default;
+$icon-size-sm: 60px !default;
+$icon-size-md: 80px !default;
+$icon-size-lg: 100px !default;
+$icon-size-xl: 120px !default;
+$icon-size-xxl: 150px !default;
+
+// Weight and italics
+$font-weight-thin: 100 !default;
+$font-weight-normal: normal !default;
+$font-weight-medium: 400 !default;
+$font-weight-semi-bold: 500 !default;
+$font-weight-bold: 600 !default;
+$font-weight-bolder: 700 !default;
+$font-weight-heavy: 800 !default;
+
+// Popover
+$popover-font-size: $font-size-xs;
+$popover-header-bg: $white;
+$popover-arrow-color: $white;
+$popover-header-color: $gray-400;
+
+// Border Radius
+$border-radius: 0.25rem !default;
+$border-radius-lg: 0.3rem !default;
+$border-radius-sm: 0.2rem !default;
+
+// Shadow Sizes
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($dark, 0.075) !default;
+$box-shadow: 0 0.5rem 1rem rgba($dark, 0.15) !default;
+$box-shadow-lg: 0 1rem 3rem rgba($dark, 0.175) !default;
+
+// Border Radius
+$border-radius: 0.25rem !default;
+$border-radius-lg: 0.3rem !default;
+$border-radius-sm: 0.2rem !default;
