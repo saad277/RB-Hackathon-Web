@@ -9,18 +9,30 @@ const Header = () => {
     history.push(path);
   };
   const redirecthome = () => {
-    let path = `/home`;
+    let path = `/`;
     history.push(path);
   };
   const redirectregister = () => {
     let path = `/register`;
     history.push(path);
   };
+  const redirectrecord = () => {
+    let path = `/record`;
+    history.push(path);
+  };
+
   const rediretschedule = () => {
     let path = `/schedule`;
     history.push(path);
   };
-
+  const rediretdetail = () => {
+    let path = `/userdetail`;
+    history.push(path);
+  };
+  const finddoctor = () => {
+    let path = `/finddoctor`;
+    history.push(path);
+  };
   return (
     <div
       class="header-wrapper  d-lg-block bg-primary1 text-white "
@@ -30,7 +42,7 @@ const Header = () => {
         <div class="container-fluid">
           <div class="row align-items-center">
             <div class="col-6 col-md-2">
-              <div className="logo">
+              <div className="logo" onClick={redirecthome}>
                 {" "}
                 <img src={im} alt="logo" />
               </div>
@@ -71,7 +83,7 @@ const Header = () => {
                 <ul class="nav main-nav nav-list ms-auto justify-content-lg-end flex-md-row flex-column py-2 py-md-0  text-white">
                   <li
                     className="py-2 py-md-0 text-center "
-                    onClick={redirecthome}
+                    onClick={rediretdetail}
                   >
                     <a href="">User Detail</a>
                   </li>
@@ -83,14 +95,17 @@ const Header = () => {
                   </li>
                   <li
                     className="py-2 py-md-0 text-center  "
-                    onClick={redirecthome}
+                    onClick={redirectrecord}
                   >
                     <a a href="">
                       Add Records
                     </a>
                   </li>
-                  <li className="py-2 py-md-0 text-center ">
-                    <a href="">Contact Us</a>
+                  <li
+                    className="py-2 py-md-0 text-center "
+                    onClick={finddoctor}
+                  >
+                    <a href="">Find A Doctor</a>
                   </li>
                 </ul>
               </div>

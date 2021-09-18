@@ -7,7 +7,9 @@ import Home from "./view/Home/index";
 import Signin from "./view/auth/signin/signin";
 import Register from "./view/auth/register/Register";
 import Schedule from "./view/Schedule/index";
+import Userdetail from "./view/userDetail/Index";
 import Adddetail from "./view/add-detail/Index";
+import Finddoctor from "./view/Finddoctor/Finddoctor";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function App() {
   return (
@@ -17,8 +19,14 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/Home">
+        <Route exact path="/record">
           <Adddetail />
+        </Route>
+        <Route exact path="/userdetail">
+          <Userdetail />
+        </Route>
+        <Route exact path="/finddoctor">
+          <Finddoctor />
         </Route>
         <Route exact path="/signin">
           <Signin />
