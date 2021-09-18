@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Register = () => {
+  const [fName, setFName] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
+  console.log(fName, companyName, email, number);
   return (
     <div className=" py-5 bg-sky ">
       <div className="container">
@@ -16,6 +21,10 @@ const Register = () => {
                       type="text"
                       class="form-control"
                       placeholder="Full Name"
+                      value={fName}
+                      onChange={(val) => {
+                        setFName(val.target.value);
+                      }}
                     />
                   </div>
                 </div>
@@ -26,6 +35,10 @@ const Register = () => {
                       type="text"
                       class="form-control"
                       placeholder="Company name"
+                      value={companyName}
+                      onChange={(val) => {
+                        setCompanyName(val.target.value);
+                      }}
                     />
                   </div>
                 </div>
@@ -36,6 +49,10 @@ const Register = () => {
                       type="text"
                       class="form-control"
                       placeholder="johnsmith@demo.com"
+                      value={email}
+                      onChange={(val) => {
+                        setEmail(val.target.value);
+                      }}
                     />
                   </div>
                 </div>
@@ -46,6 +63,10 @@ const Register = () => {
                       type="text"
                       class="form-control"
                       placeholder="0000-0000-000"
+                      value={number}
+                      onChange={(val) => {
+                        setNumber(val.target.value);
+                      }}
                     />
                   </div>
                 </div>

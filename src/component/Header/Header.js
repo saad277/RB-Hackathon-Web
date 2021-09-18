@@ -91,7 +91,7 @@ const Header = () => {
                     className="py-2 py-md-0 text-center  "
                     onClick={rediretschedule}
                   >
-                    <a href="">Shedule</a>
+                    <a href="">Schedule</a>
                   </li>
                   <li
                     className="py-2 py-md-0 text-center  "
