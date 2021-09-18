@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-
+import { useDispatch } from "react-redux";
+import { addprofile } from "../../../actions/actions";
+import axios from "axios";
 const Signin = () => {
-  const [fName, setFName] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [number, setNumber] = useState("");
-  console.log(fName, companyName, email, number);
+  const dispatch = useDispatch();
   return (
     <div className=" py-5 bg-sky ">
       <div className="container">
@@ -16,56 +16,28 @@ const Signin = () => {
               <div class="row  text-white fw-bold">
                 <div class="col-12 col-md-12">
                   <div class="mb-4 position-relative">
-                    <label>full name</label>
+                    <label>Phone Number</label>
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="Full Name"
-                      value={fName}
-                      onChange={(val) => {
-                        setFName(val.target.value);
-                      }}
-                    />
-                  </div>
-                </div>
-                <div class="col-12 col-md-12">
-                  <div class="mb-4 position-relative">
-                    <label>company name</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Company name"
-                      value={companyName}
-                      onChange={(val) => {
-                        setCompanyName(val.target.value);
-                      }}
-                    />
-                  </div>
-                </div>
-                <div class="col-12 col-md-12">
-                  <div class="mb-4 position-relative">
-                    <label>email</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="johnsmith@demo.com"
-                      value={email}
-                      onChange={(val) => {
-                        setEmail(val.target.value);
-                      }}
-                    />
-                  </div>
-                </div>
-                <div class="col-12 col-md-12">
-                  <div class="mb-4 position-relative">
-                    <label>phone number</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="0000-0000-000"
+                      placeholder="Phone number"
                       value={number}
                       onChange={(val) => {
                         setNumber(val.target.value);
+                      }}
+                    />
+                  </div>
+                </div>
+                <div class="col-12 col-md-12">
+                  <div class="mb-4 position-relative">
+                    <label>Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Password"
+                      value={password}
+                      onChange={(val) => {
+                        setPassword(val.target.value);
                       }}
                     />
                   </div>
@@ -75,6 +47,9 @@ const Signin = () => {
                   <button
                     type="button"
                     class="btn btn-primary text-primary1 bg-white fw-bold btn-lg w-100"
+                    onClick={() => {
+                      dispatch(addprofile());
+                    }}
                   >
                     Sign In
                   </button>

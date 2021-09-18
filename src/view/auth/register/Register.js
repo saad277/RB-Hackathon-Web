@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addprofile } from "../../../actions/actions";
 const Register = () => {
+  const dispatch = useDispatch();
   const [fName, setFName] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [email, setEmail] = useState("");
+  const [lName, setLName] = useState("");
+  const [password, setPassword] = useState("");
   const [number, setNumber] = useState("");
-  console.log(fName, companyName, email, number);
+  console.log(fName, lName, password, number);
   return (
     <div className=" py-5 bg-sky ">
       <div className="container">
@@ -16,11 +19,11 @@ const Register = () => {
               <div class="row  text-white fw-bold">
                 <div class="col-12 col-md-12">
                   <div class="mb-4 position-relative">
-                    <label>full name</label>
+                    <label>First Name</label>
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="Full Name"
+                      placeholder="First Name"
                       value={fName}
                       onChange={(val) => {
                         setFName(val.target.value);
@@ -30,35 +33,35 @@ const Register = () => {
                 </div>
                 <div class="col-12 col-md-12">
                   <div class="mb-4 position-relative">
-                    <label>company name</label>
+                    <label>Last Name</label>
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="Company name"
-                      value={companyName}
+                      placeholder="Last Name"
+                      value={lName}
                       onChange={(val) => {
-                        setCompanyName(val.target.value);
+                        setLName(val.target.value);
                       }}
                     />
                   </div>
                 </div>
                 <div class="col-12 col-md-12">
                   <div class="mb-4 position-relative">
-                    <label>email</label>
+                    <label>Password</label>
                     <input
-                      type="text"
+                      type="password"
                       class="form-control"
-                      placeholder="johnsmith@demo.com"
-                      value={email}
+                      placeholder="Password"
+                      value={password}
                       onChange={(val) => {
-                        setEmail(val.target.value);
+                        setPassword(val.target.value);
                       }}
                     />
                   </div>
                 </div>
                 <div class="col-12 col-md-12">
                   <div class="mb-4 position-relative">
-                    <label>phone number</label>
+                    <label>Phone Number</label>
                     <input
                       type="text"
                       class="form-control"
@@ -75,6 +78,9 @@ const Register = () => {
                   <button
                     type="button"
                     class="btn btn-primary text-primary1 bg-white fw-bold btn-lg w-100"
+                    onClick={() => {
+                      dispatch(addprofile());
+                    }}
                   >
                     Register
                   </button>
