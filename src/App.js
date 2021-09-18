@@ -6,16 +6,11 @@ import Footer from "./component/Footer/index";
 import Home from "./view/Home/index";
 import Signin from "./view/auth/signin/signin";
 import Register from "./view/auth/register/Register";
+import Schedule from "./view/Schedule/index";
 import Adddetail from "./view/add-detail/Index";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function App() {
   return (
-    // <>
-    //   <Header />
-    //   <Home />
-    //   <Adddetail />
-    //   <Footer />
-    // </>
     <Router>
       <Header />
       <Switch>
@@ -30,6 +25,9 @@ function App() {
         </Route>
         <Route exact path="/register">
           <Register />
+        </Route>
+        <Route exact path="/schedule">
+          <Schedule />
         </Route>
       </Switch>
       <Footer />

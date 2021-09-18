@@ -16,9 +16,14 @@ const Header = () => {
     let path = `/register`;
     history.push(path);
   };
+  const rediretschedule = () => {
+    let path = `/schedule`;
+    history.push(path);
+  };
+
   return (
     <div
-      class="header-wrapper  d-lg-block bg-primary text-white "
+      class="header-wrapper  d-lg-block bg-primary1 text-white "
       id="headerScroll   "
     >
       <div class="primary_header px-2">
@@ -70,7 +75,10 @@ const Header = () => {
                   >
                     <a href="">User Detail</a>
                   </li>
-                  <li className="py-2 py-md-0 text-center ">
+                  <li
+                    className="py-2 py-md-0 text-center  "
+                    onClick={rediretschedule}
+                  >
                     <a href="">Shedule</a>
                   </li>
                   <li className="py-2 py-md-0 text-center ">

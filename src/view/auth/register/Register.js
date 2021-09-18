@@ -6,7 +6,7 @@ const Register = () => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-5 col-md-5">
-            <form className="bg-primary shadow p-3 rounded">
+            <form className="bg-primary1 shadow p-3 rounded">
               <h1 className="text-center text-white">Register</h1>
               <div class="row  text-white fw-bold">
                 <div class="col-12 col-md-12">
@@ -53,7 +53,7 @@ const Register = () => {
                 <div class="col-12 col-md-12">
                   <button
                     type="button"
-                    class="btn btn-primary text-primary bg-white fw-bold btn-lg w-100"
+                    class="btn btn-primary text-primary1 bg-white fw-bold btn-lg w-100"
                   >
                     Register
                   </button>

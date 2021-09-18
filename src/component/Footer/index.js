@@ -2,7 +2,7 @@ import React from "react";
 import "./index.scss";
 const index = () => {
   return (
-    <div className="footer bg-primary text-white">
+    <div className="footer bg-primary1 text-white">
       <div className="container">
         <div className="row">
           <div className="col-md-3 col-sm-6 col-12">
