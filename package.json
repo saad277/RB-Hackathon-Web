@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fullcalendar/daygrid": "^5.9.0",
+    "@fullcalendar/interaction": "^5.9.0",
     "@fullcalendar/react": "^5.9.0",
     "@popperjs/core": "^2.10.1",
     "@testing-library/jest-dom": "^5.14.1",

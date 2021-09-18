@@ -13,3 +13,22 @@
 // .fc .fc-button-primary:not(:disabled).fc-button-active:focus {
 //   box-shadow: none !important;
 // }
+.fc-h-event .fc-event-title-container {
+  flex-grow: 1;
+  flex-shrink: 1;
+  /* min-width: 0; */
+  background-color: #1ea0bd !important;
+  border: none !important;
+  color: white !important;
+}
+.fc .fc-daygrid-day-frame {
+  &:hover {
+    background-color: #1ea0bd !important;
+  }
+}
+.fc-day-today {
+  background-color: white !important;
+  a {
+    color: #4cb4cc !important;
+  }
+}

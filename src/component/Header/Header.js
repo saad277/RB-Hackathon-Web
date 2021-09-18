@@ -81,7 +81,10 @@ const Header = () => {
                   >
                     <a href="">Shedule</a>
                   </li>
-                  <li className="py-2 py-md-0 text-center ">
+                  <li
+                    className="py-2 py-md-0 text-center  "
+                    onClick={redirecthome}
+                  >
                     <a a href="">
                       Add Records
                     </a>
