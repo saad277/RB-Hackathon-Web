@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Index = () => {
   const [fName, setFName] = useState("");
@@ -6,7 +6,15 @@ const Index = () => {
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [description, setDescription] = useState("");
-  console.log(fName, companyName, email, number, description);
+  const [location, setLocation] = useState("");
+  useEffect(() => {
+    navigator.geolocation.watchPosition((position) => {
+      if (!location) {
+        setLocation(`${position.coords.longitude},${position.coords.latitude}`);
+      }
+    });
+  }, []);
+  console.log("location", location);
   return (
     <div className="bg-secondary1 py-5 ">
       <div className="container">
