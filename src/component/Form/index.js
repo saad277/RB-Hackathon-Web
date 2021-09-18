@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const index = () => {
+const Index = () => {
+  const [fName, setFName] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
+  const [description, setDescription] = useState("");
+  const [location, setLocation] = useState("");
+  useEffect(() => {
+    navigator.geolocation.watchPosition((position) => {
+      if (!location) {
+        setLocation(`${position.coords.longitude},${position.coords.latitude}`);
+      }
+    });
+  }, []);
+  console.log("location", location);
   return (
     <div className="bg-secondary1 py-5 ">
       <div className="container">
@@ -15,6 +29,10 @@ const index = () => {
                     <input
                       type="text"
                       class="form-control"
+                      value={fName}
+                      onChange={(val) => {
+                        setFName(val.target.value);
+                      }}
                       placeholder="Full Name"
                     />
                   </div>
@@ -25,6 +43,10 @@ const index = () => {
                     <input
                       type="text"
                       class="form-control"
+                      value={companyName}
+                      onChange={(val) => {
+                        setCompanyName(val.target.value);
+                      }}
                       placeholder="Company name"
                     />
                   </div>
@@ -33,9 +55,14 @@ const index = () => {
                   <div class="mb-4 position-relative">
                     <label>email</label>
                     <input
-                      type="text"
+                      type="email"
                       class="form-control"
                       placeholder="johnsmith@demo.com"
+                      required
+                      value={email}
+                      onChange={(val) => {
+                        setEmail(val.target.value);
+                      }}
                     />
                   </div>
                 </div>
@@ -46,6 +73,10 @@ const index = () => {
                       type="text"
                       class="form-control"
                       placeholder="0000-0000-000"
+                      value={number}
+                      onChange={(val) => {
+                        setNumber(val.target.value);
+                      }}
                     />
                   </div>
                 </div>
@@ -56,6 +87,10 @@ const index = () => {
                       class="form-control"
                       rows="4"
                       placeholder="Description of project"
+                      value={description}
+                      onChange={(val) => {
+                        setDescription(val.target.value);
+                      }}
                     ></textarea>
                   </div>
                 </div>
@@ -64,7 +99,7 @@ const index = () => {
                     type="button"
                     class="btn  text-white fw-bold bg-primary1 btn-lg w-100"
                   >
-                    Talk to us
+                    Add record
                   </button>
                 </div>
               </div>
@@ -76,4 +111,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
