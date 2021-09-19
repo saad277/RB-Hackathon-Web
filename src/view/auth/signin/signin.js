@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addprofile } from "../../../actions/actions";
+import { addprofile, addtoken } from "../../../actions/actions";
+import { useHistory } from "react-router";
 import axios from "axios";
 import { apiUrl } from "../../../config";
 const Signin = () => {
   const [password, setPassword] = useState("");
   const [number, setNumber] = useState("");
   const dispatch = useDispatch();
+  const history = useHistory();
   return (
     <div className=" py-5 bg-sky ">
       <div className="container">
@@ -58,7 +60,8 @@ const Signin = () => {
                         },
                       })
                         .then((res) => {
-                          console.log("auth done", res);
+                          console.log("auth done", res.data.accessToken);
+                          dispatch(addtoken(res.data.accessToken));
                           axios({
                             method: "get",
                             url: `${apiUrl}users/me`,
@@ -68,6 +71,7 @@ const Signin = () => {
                           })
                             .then((res) => {
                               dispatch(addprofile(res.data.user._id));
+                              history.push("/");
                             })
                             .catch((err) => {
                               console.log(
