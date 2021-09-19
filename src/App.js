@@ -10,6 +10,7 @@ import Schedule from "./view/Schedule/index";
 import Userdetail from "./view/userDetail/Index";
 import Adddetail from "./view/add-detail/Index";
 import Finddoctor from "./view/Finddoctor/Finddoctor";
+import Waitinglist from "./view/Waitinglist/Waitinglist";
 import MakeAppointment from "./view/MakeAppointment/MakeAppointment";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function App() {
@@ -40,6 +41,9 @@ function App() {
         </Route>
         <Route exact path="/appointment">
           <MakeAppointment />
+        </Route>
+        <Route exact path="/waitinglist">
+          <Waitinglist />
         </Route>
       </Switch>
       <Footer />

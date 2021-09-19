@@ -4,11 +4,49 @@ import { useDispatch } from "react-redux";
 import { removeuser } from "../../actions/actions";
 import "./Header.scss";
 import im from "./../../../src/assets/images/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 const Header = () => {
   const dispatch = useDispatch();
   const profile = useSelector((state) => state.profile);
   console.log("profile", profile);
+  const history = useHistory();
+  const redirectlogin = () => {
+    let path = `signin`;
+    history.push(path);
+  };
+  const redirecthome = () => {
+    let path = `/`;
+    history.push(path);
+  };
+  const redirectregister = () => {
+    let path = `/register`;
+    history.push(path);
+  };
+  const redirectrecord = () => {
+    let path = `/record`;
+    history.push(path);
+  };
+
+  const rediretschedule = () => {
+    let path = `/schedule`;
+    history.push(path);
+  };
+  const rediretdetail = () => {
+    let path = `/userdetail`;
+    history.push(path);
+  };
+  const finddoctor = () => {
+    let path = `/finddoctor`;
+    history.push(path);
+  };
+  const appointment = () => {
+    let path = `/appointment`;
+    history.push(path);
+  };
+  const waitinglist = () => {
+    let path = `/waitinglist`;
+    history.push(path);
+  };
   return (
     <div
       class="header-wrapper  d-lg-block bg-primary1 text-white "

@@ -14,7 +14,7 @@ const Register = () => {
     <div className=" py-5 bg-sky ">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-5 col-md-5">
+          <div className="col-12 col-md-5">
             <form className="bg-primary1 shadow p-3 rounded">
               <h1 className="text-center text-white">Register</h1>
               <div class="row  text-white fw-bold">
