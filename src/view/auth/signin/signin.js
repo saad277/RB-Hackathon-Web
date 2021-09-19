@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addprofile } from "../../../actions/actions";
 import axios from "axios";
+import { apiUrl } from "../../../config";
 const Signin = () => {
   const [password, setPassword] = useState("");
   const [number, setNumber] = useState("");
@@ -48,7 +49,24 @@ const Signin = () => {
                     type="button"
                     class="btn btn-primary text-primary1 bg-white fw-bold btn-lg w-100"
                     onClick={() => {
-                      dispatch(addprofile());
+                      console.log(`${apiUrl}users`);
+                      axios({
+                        method: "post",
+                        url: `${apiUrl}users/login`,
+                        data: {
+                          phone: "0332234531",
+                          password: "123456789",
+                        },
+                      })
+                        .then((res) => {
+                          dispatch(addprofile(res.data.accessToken));
+                        })
+                        .catch((err) => {
+                          console.log(
+                            "error occured with status code:",
+                            err.response.status
+                          );
+                        });
                     }}
                   >
                     Sign In

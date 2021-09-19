@@ -1,5 +1,5 @@
-export const addprofile = () => {
-  return { type: "addprofile", data: "true" };
+export const addprofile = (data) => {
+  return { type: "addprofile", data: data };
 };
 export const removeuser = () => {
   return { type: "addprofile", data: "" };

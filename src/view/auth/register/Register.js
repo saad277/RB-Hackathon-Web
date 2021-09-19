@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addprofile } from "../../../actions/actions";
+import { apiUrl } from "../../../config";
 const Register = () => {
   const dispatch = useDispatch();
   const [fName, setFName] = useState("");
@@ -79,7 +80,23 @@ const Register = () => {
                     type="button"
                     class="btn btn-primary text-primary1 bg-white fw-bold btn-lg w-100"
                     onClick={() => {
-                      dispatch(addprofile());
+                      console.log(`${apiUrl}users`);
+                      axios({
+                        method: "post",
+                        url: `${apiUrl}users`,
+                        data: {
+                          firstName: fName,
+                          lastName: lName,
+                          password: password,
+                          phone: number,
+                        },
+                      })
+                        .then((res) => {
+                          console.log("res", res);
+                        })
+                        .catch((err) => {
+                          console.log("err", err);
+                        });
                     }}
                   >
                     Register
