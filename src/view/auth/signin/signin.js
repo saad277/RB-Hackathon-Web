@@ -49,7 +49,6 @@ const Signin = () => {
                     type="button"
                     class="btn btn-primary text-primary1 bg-white fw-bold btn-lg w-100"
                     onClick={() => {
-                      console.log(`${apiUrl}users`);
                       axios({
                         method: "post",
                         url: `${apiUrl}users/login`,
@@ -59,7 +58,21 @@ const Signin = () => {
                         },
                       })
                         .then((res) => {
-                          dispatch(addprofile(res.data.accessToken));
+                          console.log("auth done", res);
+                          axios({
+                            method: "get",
+                            url: `${apiUrl}users/me`,
+                            headers: {
+                              authorization: `Bearer ${res.data.accessToken}`,
+                            },
+                          })
+                            .then((res) => {
+                              dispatch(addprofile(res.data.user._id));
+                              console.log("user", res.data.user._id);
+                            })
+                            .catch((err) => {
+                              console.log("error", err);
+                            });
                         })
                         .catch((err) => {
                           console.log(

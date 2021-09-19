@@ -51,7 +51,7 @@ const Header = () => {
                 </span>
               </button>
             </div>
-            {profile == "true" ? (
+            {profile ? (
               <div class="col-12 col-md-7 ">
                 <div
                   class="d-md-flex align-items-center text-white   collapse navbar-collapse  "
@@ -84,7 +84,7 @@ const Header = () => {
               </div>
             ) : null}
 
-            {profile != "true" ? (
+            {!profile ? (
               <div className="col-md-3 col-12 ">
                 <div class="d-flex hero-actions text-nowrap ms-3 justify-content-md-end mt-2 mt-xl-0 text-center justify-content-center">
                   <ul className="d-flex justify-content-center align-items-center sign">
