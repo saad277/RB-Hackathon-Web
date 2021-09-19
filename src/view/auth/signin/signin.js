@@ -53,8 +53,8 @@ const Signin = () => {
                         method: "post",
                         url: `${apiUrl}users/login`,
                         data: {
-                          phone: "0332234531",
-                          password: "123456789",
+                          phone: number,
+                          password: password,
                         },
                       })
                         .then((res) => {
@@ -68,10 +68,12 @@ const Signin = () => {
                           })
                             .then((res) => {
                               dispatch(addprofile(res.data.user._id));
-                              console.log("user", res.data.user._id);
                             })
                             .catch((err) => {
-                              console.log("error", err);
+                              console.log(
+                                "error occured with status code:",
+                                err.response.status
+                              );
                             });
                         })
                         .catch((err) => {
