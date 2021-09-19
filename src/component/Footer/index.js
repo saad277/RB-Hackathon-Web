@@ -8,7 +8,7 @@ const index = () => {
           <div className="col-md-3 col-sm-6 col-12">
             <h4 className="py-2">Quick Links</h4>
             <p>Appointment</p>
-            <p>Witinglist</p>
+            <p>Waiting list</p>
             <p>Schedule</p>
             <p>Add record</p> <p>User Detail</p>
           </div>
