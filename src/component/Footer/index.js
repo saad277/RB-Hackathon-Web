@@ -7,18 +7,17 @@ const index = () => {
         <div className="row">
           <div className="col-md-3 col-sm-6 col-12">
             <h4 className="py-2">Quick Links</h4>
-            <p>About Us</p>
-            <p>Contact Us</p>
-            <p>Careers</p>
-            <p>All Cities</p> <p>Help and Support</p>
-            <p>Adevertise With Us</p>
+            <p>Appointment</p>
+            <p>Witinglist</p>
+            <p>Schedule</p>
+            <p>Add record</p> <p>User Detail</p>
           </div>
           <div className="col-md-3 col-sm-6 col-12">
-            <h4 className="py-2">How To Sell Fast</h4>
-            <p>How To Sell Fast</p>
-            <p>Membership</p>
-            <p>Banner Advertising</p>
-            <p>Promote Your Ad</p> <p>Job Delivers</p>
+            <h4 className="py-2">How To Make Appointment</h4>
+            <p>How To Find Doctor</p>
+            <p>Our Vision</p>
+            <p>Near By Doctor</p>
+            <p>Down Syndrome</p>
             <p>FAQ</p>
           </div>
 
@@ -81,7 +80,10 @@ const index = () => {
 
           <div className="col-md-3 col-sm-6 col-12">
             <h4 className="py-2">News Letter</h4>
-            <p>Jobs is Worldest leading Portal platform that brings!</p>
+            <p>
+              All people with Down syndrome can CONNECT and participate on an
+              equal basis with others!
+            </p>
           </div>
         </div>
       </div>
