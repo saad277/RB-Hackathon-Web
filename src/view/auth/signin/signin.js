@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addprofile, addtoken } from "../../../actions/actions";
+import { addprofile, addtoken, userprofile } from "../../../actions/actions";
 import { useHistory } from "react-router";
 import axios from "axios";
 import { apiUrl } from "../../../config";
@@ -62,6 +62,7 @@ const Signin = () => {
                         .then((res) => {
                           console.log("auth done", res.data.accessToken);
                           dispatch(addtoken(res.data.accessToken));
+
                           axios({
                             method: "get",
                             url: `${apiUrl}users/me`,
@@ -71,6 +72,8 @@ const Signin = () => {
                           })
                             .then((res) => {
                               dispatch(addprofile(res.data.user._id));
+                              dispatch(userprofile(res.data));
+
                               history.push("/");
                             })
                             .catch((err) => {

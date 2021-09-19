@@ -1,13 +1,22 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { apiUrl } from "../../../config";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { addprofile, addtoken, userprofile } from "../../../actions/actions";
 const Register = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
   const [password, setPassword] = useState("");
   const [number, setNumber] = useState("");
+  const datac = {
+    fName,
+    lName,
+    password,
+    number,
+  };
 
   console.log(fName, lName, password, number);
   return (
@@ -93,6 +102,7 @@ const Register = () => {
                       })
                         .then((res) => {
                           console.log("res", res);
+                          dispatch(userprofile(res));
                           history.push("signin");
                         })
                         .catch((err) => {
