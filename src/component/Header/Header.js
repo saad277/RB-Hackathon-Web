@@ -54,7 +54,7 @@ const Header = () => {
     >
       <div class="primary_header px-2">
         <div class="container-fluid">
-          <div class="row align-items-center">
+          <div class="row align-items-center justify-content-between">
             <div class="col-6 col-md-2">
               <Link to="/">
                 <div className="logo">
