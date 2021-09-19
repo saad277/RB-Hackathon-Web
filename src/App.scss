@@ -14,6 +14,7 @@
   background-position: center;
   background-size: cover;
 }
+
 .bg-primary1 {
   background-color: #1ea0bd !important;
 }
@@ -47,5 +48,10 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 500px) {
+  .home img {
+    width: 300px;
   }
 }

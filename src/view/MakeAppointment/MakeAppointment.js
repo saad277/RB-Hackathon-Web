@@ -14,7 +14,7 @@ const MakeAppointment = () => {
     <div className="bg-secondary1 py-5 ">
       <div className="container">
         <div className="row justify-content-center ">
-          <div className="col-6">
+          <div className="col-12 col-md-6">
             <form className="bg-white p-4 rounded">
               <h1 className="text-center text-primary1">Add Appointment</h1>
               <div class="row  text-white fw-bold">

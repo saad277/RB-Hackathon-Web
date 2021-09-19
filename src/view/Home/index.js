@@ -5,7 +5,7 @@ import ds1 from "./../../assets/images/DS_features.jpg";
 import ds2 from "./../../assets/images/dstypes.jfif";
 const index = () => {
   return (
-    <>
+    <div className="home">
       <div className="bg-sky">
         <div className="container text-white text-center">
           <div className="row justify-content-center align-items-center py-5">
@@ -81,7 +81,7 @@ const index = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
