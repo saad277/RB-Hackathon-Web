@@ -37,6 +37,10 @@ const Header = () => {
     let path = `/appointment`;
     history.push(path);
   };
+  const waitinglist = () => {
+    let path = `/waitinglist`;
+    history.push(path);
+  };
   return (
     <div
       class="header-wrapper  d-lg-block bg-primary1 text-white "
@@ -45,7 +49,7 @@ const Header = () => {
       <div class="primary_header px-2">
         <div class="container-fluid">
           <div class="row align-items-center">
-            <div class="col-6 col-md-2">
+            <div class="col-6 col-md-1">
               <div className="logo" onClick={redirecthome}>
                 {" "}
                 <img src={im} alt="logo" />
@@ -79,7 +83,7 @@ const Header = () => {
               </button>
             </div>
 
-            <div class="col-12 col-md-7 ">
+            <div class="col-12 col-md-9 ">
               <div
                 class="d-md-flex align-items-center text-white   collapse navbar-collapse  "
                 id="navbarSupportedContent"
@@ -115,14 +119,20 @@ const Header = () => {
                     className="py-2 py-md-0 text-center "
                     onClick={appointment}
                   >
-                    <a href="">Make Appointment</a>
+                    <a href="">Appointment</a>
+                  </li>
+                  <li
+                    className="py-2 py-md-0 text-center "
+                    onClick={waitinglist}
+                  >
+                    <a href="">Waiting List</a>
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div className="col-md-3 col-12 ">
-              <div class="d-flex hero-actions text-nowrap ms-3 justify-content-md-end mt-2 mt-xl-0 text-center justify-content-center">
+            <div className="col-md-2 col-12 ">
+              <div class="d-flex hero-actions text-nowrap  justify-content-md-end mt-2 mt-xl-0 text-center justify-content-center">
                 <ul className="d-flex justify-content-center align-items-center sign">
                   <li onClick={redirectlogin}>
                     <svg
