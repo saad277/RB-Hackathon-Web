@@ -3,12 +3,15 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addprofile } from "../../../actions/actions";
 import { apiUrl } from "../../../config";
+import { useHistory } from "react-router-dom";
 const Register = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
   const [password, setPassword] = useState("");
   const [number, setNumber] = useState("");
+
   console.log(fName, lName, password, number);
   return (
     <div className=" py-5 bg-sky ">
@@ -93,6 +96,7 @@ const Register = () => {
                       })
                         .then((res) => {
                           console.log("res", res);
+                          history.push("signin");
                         })
                         .catch((err) => {
                           console.log("err", err);
