@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
-import { addprofile } from "../../../actions/actions";
 import { apiUrl } from "../../../config";
 import { useHistory } from "react-router-dom";
 const Register = () => {
   const history = useHistory();
-  const dispatch = useDispatch();
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
   const [password, setPassword] = useState("");

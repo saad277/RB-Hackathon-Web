@@ -1,11 +1,15 @@
+import axios from "axios";
 import React, { useState } from "react";
-
+import { apiUrl } from "../../config";
+import { useSelector } from "react-redux";
 const MakeAppointment = () => {
-  const [patientName, setPatientName] = useState("");
+  const profile = useSelector((state) => state.profile);
+  const token = useSelector((state) => state.token);
+  const [therapist, setTherapist] = useState("");
   const [date, setDate] = useState("");
-  const [therapyType, setTherapyType] = useState("");
+  const [therapyType, setTherapyType] = useState();
   const [remarks, setRemarks] = useState("");
-  console.log(patientName, date, therapyType, remarks);
+  console.log(token, "token");
   return (
     <div className="bg-secondary1 py-5 ">
       <div className="container">
@@ -16,15 +20,15 @@ const MakeAppointment = () => {
               <div class="row  text-white fw-bold">
                 <div class="col-12 col-md-6">
                   <div class="mb-4 position-relative">
-                    <label>Name of patient</label>
+                    <label>Therapist Name</label>
                     <input
                       type="text"
                       class="form-control"
-                      value={patientName}
+                      value={therapist}
                       onChange={(val) => {
-                        setPatientName(val.target.value);
+                        setTherapist(val.target.value);
                       }}
-                      placeholder="Patient Name"
+                      placeholder="Therapist Name"
                     />
                   </div>
                 </div>
@@ -38,7 +42,7 @@ const MakeAppointment = () => {
                       onChange={(val) => {
                         setDate(val.target.value);
                       }}
-                      placeholder="Appointment date"
+                      placeholder={Date(Date.now()).toString()}
                     />
                   </div>
                 </div>
@@ -46,7 +50,7 @@ const MakeAppointment = () => {
                   <div class="mb-4 position-relative">
                     <label>Therapy type</label>
                     <input
-                      type="text"
+                      type="number"
                       class="form-control"
                       placeholder="Therapy type"
                       required
@@ -63,7 +67,7 @@ const MakeAppointment = () => {
                     <textarea
                       class="form-control"
                       rows="4"
-                      placeholder="Remarks"
+                      placeholder="Remarks (Optional)"
                       value={remarks}
                       onChange={(val) => {
                         setRemarks(val.target.value);
@@ -75,6 +79,39 @@ const MakeAppointment = () => {
                   <button
                     type="button"
                     class="btn  text-white fw-bold bg-primary1 btn-lg w-100"
+                    onClick={() => {
+                      console.log(
+                        "date",
+                        date,
+                        "therapist",
+                        therapist,
+                        "therapyType",
+                        therapyType,
+                        "token",
+                        token
+                      );
+                      axios({
+                        url: `${apiUrl}appointments/${profile}`,
+                        method: "post",
+                        headers: {
+                          Authorization: `Bearer ${token}`,
+                        },
+                        data: {
+                          appointmentDate: date,
+                          therapist: therapist,
+                          therapyType: therapyType,
+                        },
+                      })
+                        .then((res) => {
+                          console.log("added appointment", res);
+                        })
+                        .catch((err) => {
+                          console.log(
+                            "error occured with code: ",
+                            err.response.status
+                          );
+                        });
+                    }}
                   >
                     Submit
                   </button>
