@@ -36,7 +36,7 @@ const MakeAppointment = () => {
                   <div class="mb-4 position-relative">
                     <label>Date of appointment</label>
                     <input
-                      type="text"
+                      type="date"
                       class="form-control"
                       value={date}
                       onChange={(val) => {

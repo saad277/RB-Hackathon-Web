@@ -111,6 +111,9 @@ const Header = () => {
                     <li className="py-2 py-md-0 text-center ">
                       <Link to="/appointment">Make appointment</Link>
                     </li>
+                    <li className="py-2 py-md-0 text-center ">
+                      <Link to="/waitinglist">Waiting list</Link>
+                    </li>
                     <li
                       onClick={() => dispatch(removeuser())}
                       className="py-2 py-md-0 text-center "
